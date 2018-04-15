@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import ToDoList from "./ToDoList";
-import AddToDo from "./AddToDo";
+import {Provider} from 'react-redux';
+import store from "../store";
 
 class App extends Component {
   render() {
     return (
       <div>
-        <AddToDo/>
-        <ToDoList/>
+        <Provider store={store}>
+          <ToDoList/>
+        </Provider>
       </div>
     );
   }

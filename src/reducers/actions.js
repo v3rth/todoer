@@ -14,3 +14,10 @@ export function toggleToDo(id) {
     id: id
   }
 }
+
+export function setVisibility(value) {
+  return {
+    type: 'SET_VISIBILITY',
+    value: value
+  }
+}

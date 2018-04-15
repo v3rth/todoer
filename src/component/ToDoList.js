@@ -1,23 +1,45 @@
 import React, { Component } from 'react';
 import ToDoListElement from './ToDoListElement';
-import store from '../store';
+import VisibilityFilter from "./VisibilityFilter";
+import AddToDo from "./AddToDo";
+import PropTypes from 'prop-types';
 
 class ToDoList extends Component {
-  constructor(props) {
+  static contextTypes = {
+    store: PropTypes.object
+  };
+
+  constructor(props, {store}) {
     super(props);
 
-    this.state = {
-      todos: store.getState()
-    };
+    this.state = store.getState();
+    store.subscribe(() => this.setState(store.getState()))
+  }
 
-    store.subscribe(() => this.setState({todos: store.getState()}))
+  filter(todo) {
+    switch(this.state.visibility) {
+      case 'COMPLETED':
+        return todo.isCompleted;
+      case 'UNCOMPLETED':
+        return !todo.isCompleted;
+      default:
+        return true
+    }
   }
 
   render() {
     return (
-      <ul>
-        { this.state.todos.map(todo => <ToDoListElement key={todo.id} todo={todo}/>) }
-      </ul>
+      <div>
+        <AddToDo/>
+        <ul>
+          { this.state.todos.filter(this.filter.bind(this)).map(todo => <ToDoListElement key={todo.id} todo={todo}/>) }
+        </ul>
+
+        <VisibilityFilter list="ALL">All</VisibilityFilter>
+        <VisibilityFilter list="COMPLETED">Completed</VisibilityFilter>
+        <VisibilityFilter list="UNCOMPLETED">Uncompleted</VisibilityFilter>
+      </div>
+
     );
   }
 }
