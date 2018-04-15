@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import App from './component/App';
+import fixtures from './fixtures';
 import registerServiceWorker from './registerServiceWorker';
+
+fixtures();
 
 ReactDOM.render(<App />, document.getElementById('root'));
 registerServiceWorker();
