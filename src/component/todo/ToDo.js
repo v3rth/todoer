@@ -5,7 +5,7 @@ class ToDo extends Component {
     let style = {'textDecoration': this.props.isCompleted ? 'line-through' : ''};
 
     return (
-        <span style={style}>
+        <span onClick={() => this.props.onClickName()} style={style}>
           { this.props.name }
         </span>
     );

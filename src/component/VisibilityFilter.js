@@ -1,20 +1,19 @@
 import React, { Component } from 'react';
 import {setVisibility} from "../reducers/actions";
 import store from "../store";
+import Activator from "./list/Activator";
 
 class VisibilityFilter extends Component {
   render() {
-    if (store.getState().visibility === this.props.list) {
-      return (
-          <span>{this.props.children}</span>
-      );
-    }
-
     return (
-      <a href="#" onClick={(e) => {e.preventDefault(); this.click()}}>
-        {this.props.children}
-      </a>
+        <Activator onSelect={this.click.bind(this)} isActive={this.isActive()}>
+          {this.props.children}
+        </Activator>
     );
+  }
+
+  isActive() {
+    return store.getState().visibility === this.props.list;
   }
 
   click() {

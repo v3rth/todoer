@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import store from '../store';
-import {addToDo} from '../reducers/actions';
+import store from '../../store';
+import {addToDo} from '../../reducers/actions';
 
 class AddToDo extends Component {
   render() {
@@ -13,7 +13,7 @@ class AddToDo extends Component {
   }
 
   clickAdd() {
-    store.dispatch(addToDo(this.input.value));
+    store.dispatch(addToDo(store.getState().selectedList, this.input.value));
     this.input.value = '';
   }
 }

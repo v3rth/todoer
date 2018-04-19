@@ -1,8 +1,10 @@
 import {combineReducers, createStore} from "redux";
-import todos from "./reducers/todos";
 import visibility from "./reducers/visibility";
+import lists from "./reducers/lists";
+import selectedList from "./reducers/selectedList";
 
 export default createStore(combineReducers({
-  todos,
+  lists,
+  selectedList,
   visibility
 }));
