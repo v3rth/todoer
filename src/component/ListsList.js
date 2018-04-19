@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import store from '../../store';
-import {selectList} from "../../reducers/actions";
+import store from '../store';
+import {selectList} from "../reducers/actions";
 import ListElement from "./ListElement";
 
 class ListsList extends Component {

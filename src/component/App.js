@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import ToDoList from "./list/ToDoList";
-import {Provider} from 'react-redux';
-import store from "../store";
-import ListsList from "./list/ListsList";
-import AddList from "./list/AddList";
+import ToDoList from "./ToDoList";
+import ListsList from "./ListsList";
+import AddList from "./AddList";
 
 class App extends Component {
   render() {
@@ -11,9 +9,7 @@ class App extends Component {
       <div>
         <AddList/>
         <ListsList/>
-        <Provider store={store}>
-          <ToDoList/>
-        </Provider>
+        <ToDoList/>
       </div>
     );
   }

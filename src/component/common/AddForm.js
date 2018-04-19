@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import store from '../../store';
-import {addToDo} from '../../reducers/actions';
 
-class AddToDo extends Component {
+class AddForm extends Component {
   render() {
     return (
         <div>
@@ -13,9 +11,9 @@ class AddToDo extends Component {
   }
 
   clickAdd() {
-    store.dispatch(addToDo(store.getState().selectedList, this.input.value));
+    this.props.onSubmit(this.input.value);
     this.input.value = '';
   }
 }
 
-export default AddToDo;
+export default AddForm;

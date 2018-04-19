@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import ToDoListElement from '../todo/ToDoListElement';
-import VisibilityFilter from "../VisibilityFilter";
-import AddToDo from "../todo/AddToDo";
-import PropTypes from 'prop-types';
+import ToDoListElement from './ToDoListElement';
+import VisibilityFilter from "./VisibilityFilter";
+import store from '../store';
 import _ from 'underscore';
+import AddForm from "./common/AddForm";
+import {addToDo} from "../reducers/dispatchers";
 
 function filterTodos(visibility) {
   return (todo) => {
@@ -33,11 +34,7 @@ function getFilter(state) {
 }
 
 class ToDoList extends Component {
-  static contextTypes = {
-    store: PropTypes.object
-  };
-
-  constructor(props, {store}) {
+  constructor(props) {
     super(props);
 
     this.state = store.getState();
@@ -45,9 +42,13 @@ class ToDoList extends Component {
   }
 
   render() {
+    if (this.state.selectedList === null) {
+      return (<div/>);
+    }
+
     return (
       <div>
-        <AddToDo/>
+        <AddForm onSubmit={(name) => addToDo(this.state.selectedList, name)}/>
         <ul>
           { getFilter(this.state).map(todo => <ToDoListElement key={todo.id} todo={todo}/>) }
         </ul>
@@ -56,7 +57,6 @@ class ToDoList extends Component {
         <VisibilityFilter list="COMPLETED">Completed</VisibilityFilter>
         <VisibilityFilter list="UNCOMPLETED">Uncompleted</VisibilityFilter>
       </div>
-
     );
   }
 }

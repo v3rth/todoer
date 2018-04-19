@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {setVisibility} from "../reducers/actions";
 import store from "../store";
-import Activator from "./list/Activator";
+import Activator from "./common/Activator";
 
 class VisibilityFilter extends Component {
   render() {

@@ -3,6 +3,10 @@ function selectedList(state = null, action) {
     return action.id;
   }
 
+  if (action.type === 'REMOVE_LIST' && action.id === state) {
+    return null;
+  }
+
   return state;
 }
 
