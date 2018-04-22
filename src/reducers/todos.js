@@ -3,6 +3,7 @@ import todo from "./todo";
 function createNew(action) {
   return {
     id: action.id,
+    list: action.listId,
     name: action.name,
     isCompleted: false
   };

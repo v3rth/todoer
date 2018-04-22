@@ -1,5 +1,5 @@
 import lists from './lists';
-import {addList, addToDo, removeList} from "./actions";
+import {addList, removeList} from "./actions";
 
 describe('list', () => {
   it('returns empty list of lists', () => {
@@ -16,28 +16,14 @@ describe('list', () => {
 
   it('deletes list', () => {
     const input = [
-      {id: 1, name: 'A', todos: []},
-      {id: 2, name: 'B', todos: []},
-      {id: 3, name: 'C', todos: []}
+      {id: 1, name: 'A'},
+      {id: 2, name: 'B'},
+      {id: 3, name: 'C'}
     ];
 
     expect(lists(input, removeList(2))).toEqual([
-      {id: 1, name: 'A', todos: []},
-      {id: 3, name: 'C', todos: []}
+      {id: 1, name: 'A'},
+      {id: 3, name: 'C'}
     ])
   });
-
-  it('adds todo to specific list', () => {
-    const input = [
-      {id: 1, name: 'A', todos: []},
-      {id: 2, name: 'B', todos: []},
-      {id: 3, name: 'C', todos: []}
-    ];
-
-    expect(lists(input, addToDo(3, 'test'))).toEqual([
-      {id: 1, name: 'A', todos: []},
-      {id: 2, name: 'B', todos: []},
-      {id: 3, name: 'C', todos: [{id: 1, name: 'test', isCompleted: false}]}
-    ])
-  })
 });

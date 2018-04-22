@@ -1,10 +1,8 @@
 import {connect} from "react-redux";
-import _ from "underscore";
 import * as actions from "../../reducers/actions";
 import Todos from "./ToDos";
 
-function filterTodos(visibility) {
-  return (todo) => {
+function hasCorrectStatus(visibility, todo) {
     switch(visibility) {
       case 'COMPLETED':
         return todo.isCompleted;
@@ -13,21 +11,20 @@ function filterTodos(visibility) {
       default:
         return true
     }
-  }
 }
 
-function getToDos(lists, selectedListId) {
-  const selected = _.find(lists, (list) => list.id === selectedListId);
+function isInSelectedList(todo, state) {
+  return todo.list === state.selectedList;
+}
 
-  if (!selected) {
-    return [];
+function filterToDo(state) {
+  return (todo) => {
+    return isInSelectedList(todo, state) && hasCorrectStatus(state.visibility, todo)
   }
-
-  return selected ? selected.todos : [];
 }
 
 const mapStateToProps = state => ({
-  todos: getToDos(state.lists, state.selectedList).filter(filterTodos(state.visibility)),
+  todos: state.todos.filter(filterToDo(state)),
   selectedList: state.selectedList
 });
 

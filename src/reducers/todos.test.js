@@ -8,7 +8,7 @@ describe('todos', () => {
 
   it('adds todo', () => {
     expect(todos([], addToDo(1, 'test'))).toEqual([
-      {id: 1, name: 'test', isCompleted: false}
+      {id: 1, list: 1, name: 'test', isCompleted: false}
     ])
   });
 
