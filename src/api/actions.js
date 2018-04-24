@@ -47,8 +47,10 @@ export function createToDo(listId, name) {
 
 export function updateToDo(todo) {
   return async dispatch => {
+    dispatch(actions.resetEdit());
     const newToDo = await apiToDo.update(todo);
     dispatch(actions.updateToDo(todo.id, parseToDoFromAPI(newToDo)));
+
   };
 }
 

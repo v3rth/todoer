@@ -1,6 +1,6 @@
 import React from "react";
 
-const ToDo = ({ todo, toggleToDo }) => {
+const ToDoName = ({ todo, toggleToDo }) => {
   let style = { textDecoration: todo.isCompleted ? "line-through" : "" };
 
   return (
@@ -10,4 +10,4 @@ const ToDo = ({ todo, toggleToDo }) => {
   );
 };
 
-export default ToDo;
+export default ToDoName;

@@ -1,12 +1,14 @@
-import React from 'react';
-import Icon from "./Icon";
+import { connect } from "react-redux";
+import { removeToDo } from "../../api/actions";
+import IconButton from "./IconButton";
 
-const DeleteButton = ({onDelete}) => {
-  return (
-      <button onClick={onDelete}>
-        <Icon img="🗑"/>
-      ️</button>
-  );
-};
+const mapStateToProps = () => ({
+  icon: '🗑'
+});
 
-export default DeleteButton;
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  onClick: () => dispatch(removeToDo(ownProps.todo.id))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(IconButton);
+

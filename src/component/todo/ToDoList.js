@@ -1,9 +1,9 @@
 import React from "react";
-import ToDoListElement from "./ToDoListElement";
+import ToDoListElementContainer from "./ToDoListElementContainer";
 
 const ToDoList = ({ todos }) => {
   return (
-    <ul>{todos.map(todo => <ToDoListElement key={todo.id} todo={todo} />)}</ul>
+    <ul>{todos.map(todo => <ToDoListElementContainer key={todo.id} todo={todo} />)}</ul>
   );
 };
 

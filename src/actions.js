@@ -72,3 +72,25 @@ export function fetchToDos(todos) {
     todos
   };
 }
+
+export function editToDo(id) {
+  return {
+    type: "EDIT_TODO",
+    id
+  };
+}
+
+export function editList(id) {
+  return {
+    type: "EDIT_LIST",
+    id
+  };
+}
+
+export function resetEdit() {
+  return {
+    type: "RESET_EDIT"
+  };
+}
+
+

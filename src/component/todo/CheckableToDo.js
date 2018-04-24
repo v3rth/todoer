@@ -1,4 +1,4 @@
-import ToDo from "./ToDo";
+import ToDoName from "./ToDoName";
 import { connect } from "react-redux";
 import { updateToDo } from "../../api/actions";
 
@@ -10,4 +10,4 @@ const mapDispatchToProps = dispatch => ({
   toggleToDo: todo => dispatch(updateToDo({...todo, isCompleted: !todo.isCompleted}))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ToDo);
+export default connect(mapStateToProps, mapDispatchToProps)(ToDoName);

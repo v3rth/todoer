@@ -4,8 +4,8 @@ class AddForm extends Component {
   render() {
     return (
         <div>
-          <input type="text" ref={node => this.input = node}/>
-          <button onClick={() => this.clickAdd()}>Add</button>
+          <input type="text" ref={node => this.input = node} defaultValue={this.props.defaultValue}/>
+          <button onClick={() => this.clickAdd()}>Save</button>
         </div>
     );
   }
