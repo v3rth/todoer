@@ -1,12 +1,12 @@
-import React from 'react';
+import React from "react";
 
-const ToDo = ({todo, toggleToDo, }) => {
-  let style = {'textDecoration': todo.isCompleted ? 'line-through' : ''};
+const ToDo = ({ todo, toggleToDo }) => {
+  let style = { textDecoration: todo.isCompleted ? "line-through" : "" };
 
   return (
-      <span onClick={() => toggleToDo(todo.id)} style={style}>
-        { todo.name }
-      </span>
+    <span onClick={() => toggleToDo(todo)} style={style}>
+      {todo.name}
+    </span>
   );
 };
 

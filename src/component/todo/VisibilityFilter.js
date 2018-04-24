@@ -1,6 +1,6 @@
-import {setVisibility} from "../../reducers/actions";
+import { setVisibility } from "../../actions";
 import Activator from "../common/Activator";
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 
 const mapStateToProps = (state, ownProps) => ({
   isActive: ownProps.list === state.visibility

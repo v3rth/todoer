@@ -13,6 +13,8 @@ export default function lists(state = [], action) {
       return [...state, newListFromAction(action)];
     case 'REMOVE_LIST':
       return state.filter(list => list.id !== action.id);
+    case 'FETCH_LISTS':
+      return action.lists.map(list => ({id: list.id, name: list.name}));
     default:
       return state;
   }

@@ -1,13 +1,13 @@
-import {toggleToDo} from "../../reducers/actions";
 import ToDo from "./ToDo";
-import {connect} from "react-redux";
+import { connect } from "react-redux";
+import { updateToDo } from "../../api/actions";
 
 const mapStateToProps = (state, ownProps) => ({
   todo: ownProps.todo
 });
 
 const mapDispatchToProps = dispatch => ({
-  toggleToDo: id => dispatch(toggleToDo(id))
+  toggleToDo: todo => dispatch(updateToDo({...todo, isCompleted: !todo.isCompleted}))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ToDo);
