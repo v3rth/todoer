@@ -18,7 +18,6 @@ const Lists = ({ lists }) => {
             <strong>ALL TODOS</strong>
           </ListAllToDos>
         </li>
-        <ListElement key={'ALL_LISTS'} list={'ALL LISTS'} />
         {lists.map(list => <ListElement key={list.id} list={list} />)}
       </ul>
     </div>

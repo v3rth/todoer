@@ -17,10 +17,18 @@ function isInSelectedList(todo, state) {
   return todo.list === state.selectedList || state.selectedList === 'ALL_TODOS';
 }
 
+function containsFilteredText(filter, name) {
+  if (filter === '' || typeof filter !== 'string') {
+    return true;
+  }
+
+  return name.indexOf(filter) > -1;
+}
+
 function filterToDo(state) {
   return todo => {
     return (
-      isInSelectedList(todo, state) && hasCorrectStatus(state.visibility, todo)
+      isInSelectedList(todo, state) && hasCorrectStatus(state.visibility, todo) && containsFilteredText(state.filter, todo.name)
     );
   };
 }

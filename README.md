@@ -9,5 +9,3 @@
 
 ### functions 
 - rename list
-- search
-- search on every list

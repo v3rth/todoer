@@ -99,3 +99,10 @@ export function resetEdit() {
     type: "RESET_EDIT"
   };
 }
+
+export function filterResults(text) {
+  return {
+    type: "FILTER_RESULTS",
+    text
+  };
+}

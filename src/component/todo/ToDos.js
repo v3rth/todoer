@@ -2,6 +2,7 @@ import React from "react";
 import VisibilityFilter from "./VisibilityFilter";
 import AddForm from "../common/AddForm";
 import ToDoList from "./ToDoList";
+import SearchBox from "./SearchBox";
 
 const Todos = ({ selectedList, todos, addToDo }) => {
   if (selectedList === null) {
@@ -11,6 +12,7 @@ const Todos = ({ selectedList, todos, addToDo }) => {
   return (
     <div>
       <AddForm onSubmit={name => addToDo(selectedList, name)} />
+      <SearchBox/>
       <ToDoList todos={todos} />
 
       <VisibilityFilter list="ALL">All</VisibilityFilter>
