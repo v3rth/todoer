@@ -10,6 +10,7 @@
     "react-scripts": "1.1.4",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
+    "rmwc": "^1.5.6",
     "underscore": "^1.8.3"
   },
   "scripts": {
