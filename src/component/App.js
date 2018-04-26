@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import VisibleToDoList from "./todo/VisibleToDoList";
 import ListsContainer from "./todo/ListsContainer";
 import { connect } from "react-redux";
-import { loadTodos, loadLists } from "../api/actions";
+import { loadTodos, loadLists } from "../api-actions";
 
 class App extends Component {
   async componentDidMount() {

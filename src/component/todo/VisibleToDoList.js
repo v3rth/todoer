@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import * as apiActions from "../../api/actions";
+import * as apiActions from "../../api-actions";
 import Todos from "./ToDos";
 
 function hasCorrectStatus(visibility, todo) {

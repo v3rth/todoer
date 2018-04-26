@@ -1,6 +1,6 @@
 import AddForm from "../common/AddForm";
 import {connect} from "react-redux";
-import {updateToDo} from "../../api/actions";
+import {updateToDo} from "../../api-actions";
 
 const mapStateToProps = (state, ownProps) => ({
   defaultValue: ownProps.todo.name

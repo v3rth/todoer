@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { removeToDo } from "../../api/actions";
+import { removeToDo } from "../../api-actions";
 import IconButton from "./IconButton";
 
 const mapStateToProps = () => ({

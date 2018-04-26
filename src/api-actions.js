@@ -1,7 +1,7 @@
-import * as apiList from "./list";
-import * as apiToDo from "./todo";
-import * as actions from "../actions";
-import { parseList, parseToDoFromAPI } from "./parsers";
+import * as apiList from "./api/list";
+import * as apiToDo from "./api/todo";
+import * as actions from "./actions";
+import { parseList, parseToDoFromAPI } from "./api/parsers";
 
 export function loadLists() {
   return async dispatch => {

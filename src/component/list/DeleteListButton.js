@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import DeleteButton from "../common/DeleteButton";
-import { removeList } from "../../api/actions";
+import { removeList } from "../../api-actions";
 
 const mapStateToProps = () => ({});
 

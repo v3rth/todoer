@@ -1,6 +1,6 @@
 import Activator from "../common/Activator";
 import { connect } from "react-redux";
-import {selectList} from "../../api/actions";
+import {selectList} from "../../api-actions";
 
 const mapStateToProps = (state, ownProps) => ({
   isActive: ownProps.list.id === state.selectedList
