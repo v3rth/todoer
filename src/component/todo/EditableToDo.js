@@ -3,7 +3,9 @@ import {connect} from "react-redux";
 import {updateToDo} from "../../api-actions";
 
 const mapStateToProps = (state, ownProps) => ({
-  defaultValue: ownProps.todo.name
+  defaultValue: ownProps.todo.name,
+  label: null,
+  outlined: false
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

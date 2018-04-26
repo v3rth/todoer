@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import {Button, TextField} from "rmwc";
 
 class AddForm extends Component {
   render() {
     return (
         <div>
-          <input type="text" ref={node => this.input = node} defaultValue={this.props.defaultValue}/>
-          <button onClick={() => this.clickAdd()}>Save</button>
+          <TextField outlined={this.props.outlined} label={this.props.label || ''} ref={node => this.input = node} defaultValue={this.props.defaultValue} />
+          <Button raised onClick={() => this.clickAdd()}>{this.props.labelSave || 'Save'}</Button>
         </div>
     );
   }

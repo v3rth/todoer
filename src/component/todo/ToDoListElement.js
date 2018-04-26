@@ -3,22 +3,25 @@ import DeleteToDoButton from "./DeleteToDoButton";
 import CheckableToDo from "./CheckableToDo";
 import EditableToDo from "./EditableToDo";
 import EditToDoButton from "./EditToDoButton";
+import {ListItem, ListItemMeta, ListItemText} from "rmwc";
 
 const ToDoListElement = ({ todo, edit }) => {
   if (edit) {
     return (
-        <li key={todo.id}>
-          <EditableToDo todo={todo} />
+        <ListItem key={todo.id}>
+          <ListItemText>
+            <EditableToDo todo={todo} />
+          </ListItemText>
           <DeleteToDoButton todo={todo} />
-        </li>
+        </ListItem>
     );
   } else {
     return (
-        <li key={todo.id}>
-          <CheckableToDo todo={todo} />
+        <ListItem key={todo.id}>
           <EditToDoButton todo={todo} />
+          <ListItemText><CheckableToDo todo={todo} /></ListItemText>
           <DeleteToDoButton todo={todo} />
-        </li>
+        </ListItem>
     );
   }
 };

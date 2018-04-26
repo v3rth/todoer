@@ -1,13 +1,14 @@
 import { setVisibility } from "../../actions";
-import Activator from "../common/Activator";
 import { connect } from "react-redux";
+import {Radio} from "rmwc";
 
 const mapStateToProps = (state, ownProps) => ({
-  isActive: ownProps.list === state.visibility
+  checked: ownProps.list === state.visibility,
+  value: ownProps.list
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
-  onSelect: () => dispatch(setVisibility(ownProps.list))
+const mapDispatchToProps = dispatch => ({
+  onChange: (evt) => dispatch(setVisibility(evt.target.value))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Activator);
+export default connect(mapStateToProps, mapDispatchToProps)(Radio);

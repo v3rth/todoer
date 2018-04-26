@@ -1,13 +1,14 @@
-import ToDoName from "./ToDoName";
 import { connect } from "react-redux";
 import { updateToDo } from "../../api-actions";
+import {Checkbox} from "rmwc";
 
 const mapStateToProps = (state, ownProps) => ({
-  todo: ownProps.todo
+  checked: ownProps.todo.isCompleted,
+  children: ownProps.todo.name
 });
 
-const mapDispatchToProps = dispatch => ({
-  toggleToDo: todo => dispatch(updateToDo({...todo, isCompleted: !todo.isCompleted}))
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  onChange: event => dispatch(updateToDo({...ownProps.todo, isCompleted: event.target.checked}))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ToDoName);
+export default connect(mapStateToProps, mapDispatchToProps)(Checkbox);

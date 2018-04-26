@@ -1,13 +1,14 @@
 import { connect } from "react-redux";
-import IconButton from "../common/IconButton";
 import {editToDo} from "../../actions";
+import {ListItemGraphic, ListItemMeta} from "rmwc";
 
 const mapStateToProps = () => ({
-  icon: 'Edit'
+  children: 'edit',
+  mini: true
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   onClick: () => dispatch(editToDo(ownProps.todo.id))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(IconButton);
+export default connect(mapStateToProps, mapDispatchToProps)(ListItemGraphic);

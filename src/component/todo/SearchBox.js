@@ -1,10 +1,9 @@
-import React from "react";
 import {connect} from "react-redux";
 import {TextField} from "rmwc";
 import {filterResults} from "../../actions";
 
 const mapStateToProps = () => ({
-  box: 'box',
+  box: true,
   withLeadingIcon: 'search',
   label: 'Filter ToDos',
 });

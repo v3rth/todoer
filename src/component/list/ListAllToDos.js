@@ -1,13 +1,13 @@
-import Activator from "../common/Activator";
 import { connect } from "react-redux";
 import {selectListWithAllToDos} from "../../actions";
+import {ListItemText} from "rmwc";
 
-const mapStateToProps = (state) => ({
-  isActive: 'ALL_TODOS' === state.selectedList
+const mapStateToProps = () => ({
+  children: 'ALL TODOS'
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  onSelect: () => dispatch(selectListWithAllToDos())
+  onClick: () => dispatch(selectListWithAllToDos())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Activator);
+export default connect(mapStateToProps, mapDispatchToProps)(ListItemText);

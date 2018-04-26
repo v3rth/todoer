@@ -1,13 +1,14 @@
 import React from "react";
 import List from "./List";
 import DeleteListButton from "./DeleteListButton";
+import {ListItem, ListItemMeta, ListItemText} from "rmwc";
 
-const ListElement = ({ list }) => {
+const ListElement = ({ list, active }) => {
   return (
-    <li>
-      <List list={list}>{list.name}</List>
-      <DeleteListButton list={list} />
-    </li>
+      <ListItem activated={active}>
+        <List list={list}>{list.name}</List>
+        <DeleteListButton list={list} />
+      </ListItem>
   );
 };
 

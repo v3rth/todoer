@@ -1,5 +1,4 @@
 import { connect } from "react-redux";
-import * as apiActions from "../../api-actions";
 import Todos from "./ToDos";
 
 function hasCorrectStatus(visibility, todo) {
@@ -38,8 +37,4 @@ const mapStateToProps = state => ({
   selectedList: state.selectedList
 });
 
-const mapDispatchToProps = dispatch => ({
-  addToDo: (listId, name) => dispatch(apiActions.createToDo(listId, name))
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Todos);
+export default connect(mapStateToProps)(Todos);

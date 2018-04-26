@@ -1,15 +1,15 @@
 import { connect } from "react-redux";
 import AddForm from "../common/AddForm";
-import { createList } from "../../api-actions";
+import {createToDo} from "../../api-actions";
 
 const mapStateToProps = () => ({
-  label: 'New list name',
+  label: 'New todo name',
   labelSave: 'Add',
   outlined: true
 });
 
-const mapDispatchToProps = dispatch => ({
-  onSubmit: name => dispatch(createList(name))
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  onSubmit: name => dispatch(createToDo(ownProps.selectedList, name))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddForm);

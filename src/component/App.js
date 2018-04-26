@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import VisibleToDoList from "./todo/VisibleToDoList";
-import ListsContainer from "./todo/ListsContainer";
+import ListsContainer from "./list/ListsContainer";
 import { connect } from "react-redux";
 import { loadTodos, loadLists } from "../api-actions";
+import {Grid, GridCell} from "rmwc";
 
 class App extends Component {
   async componentDidMount() {
@@ -14,10 +15,11 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <ListsContainer />
-        <VisibleToDoList />
-      </div>
+      <Grid>
+        <GridCell span="2"><ListsContainer/></GridCell>
+        <GridCell span="1"></GridCell>
+        <GridCell span="6"><VisibleToDoList/></GridCell>
+      </Grid>
     );
   }
 }

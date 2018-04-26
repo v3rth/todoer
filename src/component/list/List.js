@@ -1,13 +1,14 @@
-import Activator from "../common/Activator";
 import { connect } from "react-redux";
 import {selectList} from "../../api-actions";
+import {ListItemText} from "rmwc";
 
 const mapStateToProps = (state, ownProps) => ({
-  isActive: ownProps.list.id === state.selectedList
+  isActive: ownProps.list.id === state.selectedList,
+  children: ownProps.list.name
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  onSelect: () => dispatch(selectList(ownProps.list.id))
+  onClick: () => dispatch(selectList(ownProps.list.id))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Activator);
+export default connect(mapStateToProps, mapDispatchToProps)(ListItemText);

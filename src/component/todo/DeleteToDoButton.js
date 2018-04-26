@@ -1,11 +1,14 @@
 import { connect } from "react-redux";
-import DeleteButton from "../common/DeleteButton";
 import { removeToDo } from "../../api-actions";
+import {ListItemMeta} from "rmwc";
 
-const mapStateToProps = () => ({});
-
-const mapDispatchToProps = (dispatch, ownProps) => ({
-  onDelete: () => dispatch(removeToDo(ownProps.todo.id))
+const mapStateToProps = () => ({
+  children: 'delete',
+  mini: true
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(DeleteButton);
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  onClick: () => dispatch(removeToDo(ownProps.todo.id))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ListItemMeta);
