@@ -14,7 +14,7 @@ function hasCorrectStatus(visibility, todo) {
 }
 
 function isInSelectedList(todo, state) {
-  return todo.list === state.selectedList;
+  return todo.list === state.selectedList || state.selectedList === 'ALL_TODOS';
 }
 
 function filterToDo(state) {

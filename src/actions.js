@@ -59,6 +59,13 @@ export function selectList(listId) {
   };
 }
 
+export function selectListWithAllToDos() {
+  return {
+    type: "SELECT_LIST",
+    id: 'ALL_TODOS'
+  }
+}
+
 export function fetchLists(lists) {
   return {
     type: "FETCH_LISTS",
@@ -92,5 +99,3 @@ export function resetEdit() {
     type: "RESET_EDIT"
   };
 }
-
-

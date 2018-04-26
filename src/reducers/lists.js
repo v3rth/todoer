@@ -2,8 +2,7 @@
 function newListFromAction(action) {
   return {
     id: action.id,
-    name: action.name,
-    todos: []
+    name: action.name
   };
 }
 
