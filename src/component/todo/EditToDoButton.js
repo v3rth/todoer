@@ -1,10 +1,9 @@
 import { connect } from "react-redux";
 import {editToDo} from "../../actions";
-import {ListItemGraphic, ListItemMeta} from "rmwc";
+import {ListItemGraphic} from "rmwc";
 
 const mapStateToProps = () => ({
-  children: 'edit',
-  mini: true
+  children: 'edit'
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

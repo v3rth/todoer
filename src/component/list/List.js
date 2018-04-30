@@ -3,7 +3,7 @@ import {selectList} from "../../api-actions";
 import {ListItemText} from "rmwc";
 
 const mapStateToProps = (state, ownProps) => ({
-  isActive: ownProps.list.id === state.selectedList,
+  selected: ownProps.list.id === state.selectedList,
   children: ownProps.list.name
 });
 

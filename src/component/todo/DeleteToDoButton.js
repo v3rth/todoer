@@ -3,8 +3,7 @@ import { removeToDo } from "../../api-actions";
 import {ListItemMeta} from "rmwc";
 
 const mapStateToProps = () => ({
-  children: 'delete',
-  mini: true
+  children: 'delete'
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

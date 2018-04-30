@@ -1,10 +1,9 @@
 import { connect } from "react-redux";
 import { removeList } from "../../api-actions";
-import {Fab, ListItemMeta} from "rmwc";
+import {ListItemMeta} from "rmwc";
 
 const mapStateToProps = () => ({
-  children: 'delete',
-  mini: true
+  children: 'delete'
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

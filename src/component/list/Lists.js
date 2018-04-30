@@ -2,7 +2,7 @@ import React from "react";
 import ListElement from "./ListElement";
 import AddList from "./AddList";
 import ListAllToDos from "./ListAllToDos";
-import {List, ListItem, ListItemGraphic, ListItemMeta, ListItemText} from "rmwc";
+import {List, ListItem, ListItemMeta} from "rmwc";
 
 const ALL_TASKS = {
   id: 'ALL_TASKS',

@@ -3,7 +3,7 @@ import DeleteToDoButton from "./DeleteToDoButton";
 import CheckableToDo from "./CheckableToDo";
 import EditableToDo from "./EditableToDo";
 import EditToDoButton from "./EditToDoButton";
-import {ListItem, ListItemMeta, ListItemText} from "rmwc";
+import {ListItem, ListItemText} from "rmwc";
 
 const ToDoListElement = ({ todo, edit }) => {
   if (edit) {

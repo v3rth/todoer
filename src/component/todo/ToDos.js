@@ -3,7 +3,6 @@ import VisibilityFilter from "./VisibilityFilter";
 import ToDoList from "./ToDoList";
 import SearchBox from "./SearchBox";
 import AddToDo from "./AddToDo";
-import {Radio} from "rmwc";
 
 const Todos = ({ selectedList, todos}) => {
   if (selectedList === null) {
