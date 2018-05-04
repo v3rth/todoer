@@ -34,7 +34,8 @@ function filterToDo(state) {
 
 const mapStateToProps = state => ({
   todos: state.todos.filter(filterToDo(state)),
-  selectedList: state.selectedList
+  selectedList: state.selectedList,
+  editableToDo: state.edit.type === 'todo' ? state.edit.id : null
 });
 
 export default connect(mapStateToProps)(Todos);

@@ -4,7 +4,7 @@ import ToDoList from "./ToDoList";
 import SearchBox from "./SearchBox";
 import AddToDo from "./AddToDo";
 
-const Todos = ({ selectedList, todos}) => {
+const Todos = ({ editableToDo, selectedList, todos}) => {
   if (selectedList === null) {
     return <div />;
   }
@@ -17,7 +17,7 @@ const Todos = ({ selectedList, todos}) => {
       <VisibilityFilter list="COMPLETED">Completed</VisibilityFilter>
       <VisibilityFilter list="UNCOMPLETED">Uncompleted</VisibilityFilter>
 
-      <ToDoList todos={todos}/>
+      <ToDoList editableToDo={editableToDo} todos={todos}/>
 
       {addToDoForm}
 

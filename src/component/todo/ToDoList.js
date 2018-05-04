@@ -1,11 +1,11 @@
 import React from "react";
-import ToDoListElementContainer from "./ToDoListElementContainer";
 import {List} from "rmwc";
+import ToDoListElement from "./ToDoListElement";
 
-const ToDoList = ({ todos }) => {
+const ToDoList = ({ todos, editableToDo }) => {
   return (
-    <List>
-      {todos.map(todo => <ToDoListElementContainer key={todo.id} todo={todo} />)}
+    <List nonInteractive={true}>
+      {todos.map(todo => <ToDoListElement key={todo.id} isEdit={todo.id === editableToDo} todo={todo} />)}
     </List>
   );
 };

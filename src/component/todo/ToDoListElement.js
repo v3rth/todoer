@@ -1,29 +1,7 @@
 import React from "react";
-import DeleteToDoButton from "./DeleteToDoButton";
-import CheckableToDo from "./CheckableToDo";
-import EditableToDo from "./EditableToDo";
-import EditToDoButton from "./EditToDoButton";
-import {ListItem, ListItemText} from "rmwc";
+import ToDoListElementEdit from "./ToDoListElementEdit";
+import ToDoListElementCheck from "./ToDoListElementCheck";
 
-const ToDoListElement = ({ todo, edit }) => {
-  if (edit) {
-    return (
-        <ListItem key={todo.id}>
-          <ListItemText>
-            <EditableToDo todo={todo} />
-          </ListItemText>
-          <DeleteToDoButton todo={todo} />
-        </ListItem>
-    );
-  } else {
-    return (
-        <ListItem key={todo.id}>
-          <EditToDoButton todo={todo} />
-          <ListItemText><CheckableToDo todo={todo} /></ListItemText>
-          <DeleteToDoButton todo={todo} />
-        </ListItem>
-    );
-  }
+export default ({ todo, isEdit }) => {
+  return isEdit ? <ToDoListElementEdit todo={todo}/> : <ToDoListElementCheck todo={todo}/>
 };
-
-export default ToDoListElement;
