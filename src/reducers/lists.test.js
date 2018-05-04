@@ -1,5 +1,5 @@
 import lists from "./lists";
-import { addList, fetchLists, removeList } from "../actions";
+import {addList, fetchLists, removeList, updateList} from "../actions";
 
 describe("list", () => {
   it("returns empty list of lists", () => {
@@ -10,9 +10,20 @@ describe("list", () => {
     expect(lists([], addList({ id: 1, name: "test" }))).toEqual([
       {
         id: 1,
-        name: "test",
-        todos: []
+        name: "test"
       }
+    ]);
+  });
+
+  it("updates list", () => {
+    const input = [
+      {id: 1, name: "A"},
+      {id: 2, name: "B"}
+    ];
+
+    expect(lists(input, updateList(2, 'C'))).toEqual([
+      {id: 1, name: "A"},
+      {id: 2, name: "C"}
     ]);
   });
 

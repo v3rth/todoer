@@ -31,7 +31,7 @@ export async function update(id, name) {
   let form = new FormData();
   form.append("name", name);
 
-  return fetch(`${listUrl}${id}`, {
+  return fetch(`${listUrl}${id}/`, {
     method: "PUT",
     body: form,
     mode: "cors"

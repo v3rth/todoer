@@ -1,26 +1,18 @@
 import React from "react";
-import ListElement from "./ListElement";
-import AddList from "./AddList";
-import ListAllToDos from "./ListAllToDos";
-import {List, ListItem, ListItemMeta} from "rmwc";
+import AddListForm from "./AddListForm";
+import {List, ListDivider} from "rmwc";
+import ListRow from "./ListRow";
+import AllToDoListElement from "./AllToDoListElement";
 
-const ALL_TASKS = {
-  id: 'ALL_TASKS',
-  name: 'ALL TASKS'
-};
-
-const Lists = ({ lists, selectedList }) => {
+const Lists = ({ lists, editableList }) => {
   return (
     <div>
       <List>
-        <ListItem activated={selectedList === 'ALL_TODOS'}>
-          <ListAllToDos list={ALL_TASKS} />
-          <ListItemMeta>star</ListItemMeta>
-        </ListItem>
-
-        {lists.map(list => <ListElement active={list.id === selectedList} key={list.id} list={list} />)}
+        <AllToDoListElement/>
+        <ListDivider/>
+        {lists.map(list => <ListRow key={list.id} isEditable={list.id === editableList} list={list} />)}
       </List>
-      <AddList />
+      <AddListForm />
     </div>
   );
 };

@@ -24,6 +24,14 @@ export function createList(name) {
   };
 }
 
+export function updateList(id, name) {
+  return async dispatch => {
+    dispatch(actions.resetEdit());
+    const newList = parseList(await apiList.update(id, name));
+    dispatch(actions.updateList(newList.id, newList.name))
+  };
+}
+
 export function removeList(id) {
   return async dispatch => {
     await apiList.remove(id);

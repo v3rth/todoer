@@ -45,6 +45,14 @@ export function addList({ id, name }) {
   };
 }
 
+export function updateList(id, newName) {
+  return {
+    type: "UPDATE_LIST",
+    id: id,
+    name: newName
+  };
+}
+
 export function removeList(id) {
   return {
     type: "REMOVE_LIST",

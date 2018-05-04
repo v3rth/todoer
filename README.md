@@ -6,6 +6,3 @@
 - "adjust design"
 - cleanup in component hierarchy
 - add PropTypes
-
-### functions 
-- rename list
